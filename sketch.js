@@ -91,11 +91,24 @@ function draw() {
 
 //create mouseDragged function here
 
+function mouseDragged(){
+  Matter.Body.setPosition(stoneObj.body,{x:mouseX,y:mouseY});
+}
 
 //create mouseReleased function here
+function mouseReleased(){
+  slingshot.fly();
+}
 
 
 //create keyPressed function here
+
+function keyPressed(){
+  if (keyCode === 32){
+    slingshot.attach(stoneObj.body);
+    
+  }
+}
 
 
   function detectollision(lstone,lmango){
